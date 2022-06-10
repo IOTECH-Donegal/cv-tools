@@ -1,3 +1,15 @@
+""""
+ExtractImages
+Videos from RawVideos are processed and all frames saved to ProcessedImages
+Tested with Python >=3.9
+
+By: JOR
+    v0.1    10JUN22     First draft
+
+"""
+# Reference: https://docs.opencv.org/4.x/dd/d43/tutorial_py_video_display.html
+
+
 import os
 import cv2
 import numpy as np

@@ -1,3 +1,16 @@
+""""
+BrowseImages
+Videos in RawVideo are processed, the user can scroll
+When a frame is required, the user can save as an image to ProcessedImages directory
+Tested with Python >=3.9
+
+By: JOR
+    v0.1    10JUN22     First draft
+
+"""
+# Reference: https://docs.opencv.org/4.x/dd/d43/tutorial_py_video_display.html
+
+
 import os
 import cv2
 import numpy as np
@@ -54,5 +67,4 @@ if __name__ == "__main__":
         # Create the full path to the image
         readpath = os.path.join(os.getcwd(), "RawVideos", filename)
         # Load the image into the image_image global, when reading, set -1 = Untouched, 1 = Color, 0 = B&W
-        #read_video(readpath)
         read_video(readpath)

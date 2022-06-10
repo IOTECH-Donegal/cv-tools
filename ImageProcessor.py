@@ -1,6 +1,23 @@
+""""
+ImageProcessor
+Browse images in RawImages directory, do processing and then save in ProcessedImages directory
+Tested with Python >=3.9
+
+By: JOR
+    v0.1    10JUN22     First draft
+
+"""
+# Reference: https://docs.opencv.org/4.x/dd/d43/tutorial_py_video_display.html
+
+
 import os
 import cv2
 import numpy as np
+
+print('Utility to browse images stored in RawImages directory')
+print('With the ability to save individual frames to ProcessedImages directory')
+print('Press n to go to the next window and s to save, q to quit')
+input('Press ENTER to continue...')
 
 # CV uses image variable as a numpy array
 current_image = np.array([])
@@ -30,9 +47,6 @@ def show_image():
     cv2.imshow(filename, current_image)
     
 
-
-
-
 # Main programme
 if __name__ == "__main__":
     for filename in os.listdir(raw_images_directory):
@@ -44,7 +58,9 @@ if __name__ == "__main__":
         show_image()
         # Either move on by hitting "d" or save by hitting "s"
         key_press = cv2.waitKey()
-        if key_press == ord('d'):
+        if key_press == ord('q'):
+            break
+        elif key_press == ord('n'):
             cv2.destroyAllWindows
         elif key_press == ord('s'):
             # Test write an image back
